@@ -1,0 +1,19 @@
+[package]
+name = "hcloudfirewallupdater"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "z"  # Optimiere für minimale Binärgröße
+lto = true       # Aktiviert Link-Time Optimization
+strip = true     # Entfernt Debugging-Informationen aus der Binärdatei
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+log = "0.4"
+env_logger = "0.11"
+clap = { version = "4", features = ["derive"] }
+trust-dns-resolver = "0.23"

@@ -1,0 +1,14 @@
+services:
+  app:
+    image: ghcr.io/hueske-digital/hcloudfirewallupdater:latest
+    restart: unless-stopped
+    environment:
+      - HETZNER_API_TOKEN
+      - PROJECT_ID
+      - FIREWALL_ID
+      - RULE_NAME
+      - RULE_PORT
+      - RULE_PROTOCOL
+      - HOSTS
+      - CHECK_INTERVAL=600
+      - RUST_LOG=info
