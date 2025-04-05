@@ -10,5 +10,5 @@ services:
       - RULE_PORT
       - RULE_PROTOCOL
       - HOSTS
-      - CHECK_INTERVAL=60
+      - CHECK_INTERVAL=${CHECK_INTERVAL:-60}
       - RUST_LOG=${RUST_LOG:-info}
